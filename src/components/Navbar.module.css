@@ -13,10 +13,6 @@
   align-items: center;
 }
 
-.navbar li {
-  list-style-type: none;
-}
-
 .title {
   margin-right: auto;
   font-weight: bold;
