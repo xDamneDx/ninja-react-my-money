@@ -20,7 +20,7 @@ export const useLogin = () => {
       );
 
       // Dispatch login action
-      dispatch({ type: "LOGIN", patload: response.user });
+      dispatch({ type: "LOGIN", payload: response.user });
 
       if (!isCancelled) {
         setIsPending(false);
@@ -35,8 +35,8 @@ export const useLogin = () => {
   };
 
   useEffect(() => {
-    return setIsCancelled(true);
+    return () => setIsCancelled(true);
   }, []);
 
-  return { login, error, isPending };
+  return { login, error, isPending, isCancelled };
 };
